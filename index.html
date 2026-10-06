@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OriginCC - OriginOS 7 style Control Center for Android</title>
+<meta name="description" content="Free liquid glass Control Center for Android with real-time blur. Runs on 4GB RAM phones. Download the APK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e1424; --ink:#eef2ff; --mute:#9aa6c7;
+  --glass:rgba(255,255,255,.14); --edge:rgba(255,255,255,.28);
+  --a:#5b8cff; --b:#ff7ac6; --c:#37e0c0;
+}
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+h1,h2{line-height:1.15;margin:0}
+h2{font-size:1.5rem;font-weight:800;margin-bottom:12px}
+p{margin:0 0 12px;color:var(--mute)}
+
+/* hero: the glass sits over a wallpaper, like the real thing */
+.hero{position:relative;overflow:hidden;padding:48px 0 56px;
+  background:
+   radial-gradient(60% 50% at 15% 10%,var(--a),transparent 70%),
+   radial-gradient(55% 45% at 90% 30%,var(--b),transparent 70%),
+   radial-gradient(60% 50% at 40% 100%,var(--c),transparent 70%),
+   #121a33}
+.hero h1{font-size:2.6rem;font-weight:800;letter-spacing:-.02em}
+.hero p{color:#dfe6ff;max-width:34ch;margin-top:10px}
+.panel{margin:28px 0;padding:14px;border-radius:30px;background:var(--glass);
+  border:1px solid var(--edge);backdrop-filter:blur(22px) saturate(1.4);-webkit-backdrop-filter:blur(22px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 18px 40px rgba(0,0,0,.25)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{aspect-ratio:1;border-radius:22px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);
+  display:grid;place-items:center;font-size:1.4rem}
+.tile.on{background:rgba(255,255,255,.55);color:#16203f}
+.wide{grid-column:span 2;aspect-ratio:auto;height:64px;justify-items:start;padding:0 16px;font-size:.9rem;font-weight:600}
+.slider{margin-top:10px;height:46px;border-radius:23px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);overflow:hidden}
+.slider i{display:block;height:100%;width:62%;background:rgba(255,255,255,.55)}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:15px 28px;border-radius:999px;
+  background:#fff;color:#14204a;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.btn:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+.small{font-size:.85rem;color:#cdd7ff;margin-top:12px}
+
+section{padding:36px 0}
+video{width:100%;border-radius:20px;background:#000;display:block}
+.feat{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.feat li{padding-left:16px;border-left:3px solid var(--a)}
+.feat b{display:block;font-weight:800}
+.feat span{color:var(--mute)}
+ol{padding-left:20px;margin:0 0 20px;color:var(--mute)}
+ol li{margin-bottom:8px}
+ol b{color:var(--ink)}
+
+/* ad slots */
+.ad{margin:8px auto;text-align:center}
+.ad small{display:block;color:var(--mute);font-size:.75rem;margin-bottom:6px}
+.ad iframe{border:0;display:block;margin:0 auto;max-width:100%}
+
+footer{padding:28px 0 40px;color:var(--mute);font-size:.85rem;border-top:1px solid rgba(255,255,255,.08)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>OriginCC</h1>
+    <p>The OriginOS 7 Control Center, rebuilt for any Android phone.</p>
+
+    <div class="panel" aria-hidden="true">
+      <div class="tiles">
+        <div class="tile on">📶</div><div class="tile on">🔵</div>
+        <div class="tile wide">Flashlight</div>
+        <div class="tile">🔔</div><div class="tile on">🌙</div>
+        <div class="tile">🔄</div><div class="tile">✈️</div>
+      </div>
+      <div class="slider"><i></i></div>
+    </div>
+
+    
+    <p class="small">Free. Android 7.0 and up. About 5 MB.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>See it in action</h2>
+    <video controls preload="metadata" playsinline poster="demo-poster.jpg">
+      <source src="demo.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- AD SLOT 1: 320x50 banner (ad.html) -->
+  <div class="ad">
+    <small>Advertisement</small>
+    <iframe src="ad.html" width="320" height="50" scrolling="no" title="Advertisement"></iframe>
+  </div>
+
+  <section>
+    <h2>What you get</h2>
+    <ul class="feat">
+      <li><b>Real-time blur</b><span>Live liquid glass over whatever is on your screen, not a static wallpaper.</span></li>
+      <li><b>Light on RAM</b><span>Runs smoothly on 4GB phones.</span></li>
+      <li><b>Reorderable tiles</b><span>Press, hold and drag to arrange the grid your way.</span></li>
+      <li><b>Stacked notifications</b><span>Notification shade with smooth stacking animations.</span></li>
+    </ul>
+  </section>
+
+  <!-- AD SLOT 2: 300x250 banner (ad2.html) -->
+  <div class="ad">
+    <small>Advertisement</small>
+    <iframe src="ad2.html" width="300" height="250" scrolling="no" title="Advertisement"></iframe>
+  </div>
+
+  <section>
+    <h2>How to install</h2>
+    <ol>
+      
+      <li>Tap <b>Download APK</b> and open the file when it finishes.</li>
+      <li>If Android asks, allow <b>Install unknown apps</b> for your browser.</li>
+      <li>Open OriginCC and allow <b>Display over other apps</b>. The panel needs it to float above your screen.</li>
+      <li>Turn on the OriginCC <b>Accessibility service</b>. It is used only to capture the screen for the blur effect.</li>
+    </ol>
+    <a class="btn" href="OriginCC.apk" download>Download APK</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    OriginCC is an independent project and is not affiliated with vivo or OriginOS.
+  </div>
+</footer>
+
+</body>
+</html>
