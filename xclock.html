@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<title>Xiaomi Clock | Download APK</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #101010;
+    --card: #191919;
+    --red: #ff3b30;
+    --text: #f5f5f5;
+    --muted: #a3a3a3;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: auto;
+    padding: 0 18px;
+}
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.brand span {
+    color: var(--red);
+}
+
+.version-tag {
+    font-size: 11px;
+    color: #ffaaa5;
+    background: #321916;
+    border: 1px solid #54241f;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 42px 0 28px;
+}
+
+.app-icon {
+    width: 104px;
+    height: 104px;
+    margin: 0 auto 22px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #ff554a, #d91d24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 40px rgba(255, 59, 48, 0.2);
+}
+
+.app-icon svg {
+    width: 62px;
+    height: 62px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 7vw, 43px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.subtitle {
+    max-width: 420px;
+    margin: auto;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Details */
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.detail {
+    text-align: center;
+    padding: 15px 5px;
+    background: var(--card);
+    border: 1px solid #292929;
+    border-radius: 15px;
+}
+
+.detail strong {
+    display: block;
+    font-size: 13px;
+}
+
+.detail small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+/* Download */
+
+.download-card {
+    background: linear-gradient(145deg, #202020, #171717);
+    border: 1px solid #343434;
+    border-radius: 22px;
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.download-card h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.download-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 54px;
+    background: var(--red);
+    color: #fff;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 750;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+    background: #df2921;
+}
+
+.download-btn svg {
+    width: 21px;
+    height: 21px;
+}
+
+.secure-note {
+    margin-top: 14px;
+    color: #a7a7a7;
+    font-size: 11px;
+}
+
+/* Advertisement slots */
+
+.ad-section {
+    margin: 28px 0;
+}
+
+.ad-heading {
+    color: #858585;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ad-frame {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    background: #181818;
+}
+
+.ad-section.tall .ad-frame {
+    height: 180px;
+}
+
+/* Information */
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.features {
+    display: grid;
+    gap: 10px;
+}
+
+.feature {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    padding: 15px;
+    border-radius: 14px;
+    background: var(--card);
+    border: 1px solid #292929;
+}
+
+.feature-icon {
+    color: var(--red);
+    font-size: 20px;
+    min-width: 25px;
+}
+
+.feature h3 {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.notice {
+    margin-top: 25px;
+    padding: 16px;
+    background: #201c14;
+    border: 1px solid #40351f;
+    border-radius: 14px;
+    color: #d9c69d;
+    font-size: 12px;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 11px;
+    padding: 30px 0 24px;
+}
+
+footer a {
+    color: #bbb;
+}
+
+/* Wider screens */
+
+@media (min-width: 600px) {
+    .hero {
+        padding-top: 55px;
+    }
+
+    .download-card {
+        padding: 30px;
+    }
+
+    .download-btn {
+        max-width: 360px;
+        margin: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <nav class="navbar">
+        <a href="xclock.html" class="brand">X<span>Clock</span></a>
+        <span class="version-tag">APK DOWNLOAD</span>
+    </nav>
+
+    <main>
+        <section class="hero">
+
+            <div class="app-icon">
+                <svg viewBox="0 0 64 64" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="34" r="22"
+                        stroke="white" stroke-width="4"/>
+                    <path d="M32 20V34L42 40"
+                        stroke="white" stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"/>
+                    <path d="M23 7H41"
+                        stroke="white" stroke-width="4"
+                        stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <h1>Xiaomi <span>Clock</span></h1>
+            <p class="subtitle">
+                A clean clock experience for your Android device.
+                Download the APK and check compatibility with your phone.
+            </p>
+
+        </section>
+
+        <section class="details">
+            <div class="detail">
+                <strong>Android</strong>
+                <small>Compatibility varies</small>
+            </div>
+
+            <div class="detail">
+                <strong>APK</strong>
+                <small>Installation file</small>
+            </div>
+
+            <div class="detail">
+                <strong>Clock</strong>
+                <small>App category</small>
+            </div>
+        </section>
+
+        <section class="download-card">
+            <h2>Ready to download?</h2>
+            <p>Get the Xiaomi Clock APK on your device.</p>
+
+            <!-- Change this path to your actual APK filename or URL -->
+            <a class="download-btn"
+               href="XiaomiClock.apk"
+               download="XiaomiClock.apk">
+
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <path d="m7 10 5 5 5-5"/>
+                    <path d="M12 15V3"/>
+                </svg>
+
+                Download APK
+            </a>
+
+            <div class="secure-note">
+                Only install APKs from sources you trust.
+            </div>
+        </section>
+
+        <!-- ADVERTISEMENT 1 -->
+        <section class="ad-section">
+            <div class="ad-heading">ADVERTISEMENT</div>
+
+            <iframe
+                class="ad-frame"
+                src="ad.html"
+                title="Advertisement 1"
+                loading="lazy"
+                scrolling="auto">
+            </iframe>
+        </section>
+
+        <section>
+            <h2 class="section-title">About the app</h2>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">&#9679;</div>
+                    <div>
+                        <h3>Clock & Alarms</h3>
+                        <p>Check the available clock and alarm features
+                           in the version you install.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">&#9201;</div>
+                    <div>
+                        <h3>Timer & Stopwatch</h3>
+                        <p>Explore the timer and stopwatch features,
+                           if supported by your APK version.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">&#9881;</div>
+                    <div>
+                        <h3>Android Compatibility</h3>
+                        <p>Compatibility depends on the APK version,
+                           Android release and device software.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVERTISEMENT 2 -->
+        <section class="ad-section tall">
+            <div class="ad-heading">ADVERTISEMENT</div>
+
+            <iframe
+                class="ad-frame"
+                src="ad2.html"
+                title="Advertisement 2"
+                loading="lazy"
+                scrolling="auto">
+            </iframe>
+        </section>
+
+        <div class="notice">
+            <strong>Installation note</strong><br>
+            This page is an independent download page, not an official
+            Xiaomi website. Verify the APK source and file integrity
+            before installation. Some versions may not work on every phone.
+        </div>
+    </main>
+
+    <footer>
+        <p>Made for Android enthusiasts.</p>
+        <p style="margin-top:6px">
+            <a href="xclock.html">Home</a>
+            &nbsp; · &nbsp;
+            Xiaomi Clock APK
+        </p>
+    </footer>
+
+</div>
+</body>
+</html>
