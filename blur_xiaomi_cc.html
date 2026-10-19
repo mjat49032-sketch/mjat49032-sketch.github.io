@@ -498,17 +498,42 @@ h1 span {
 
 </div>
 
+
 <script>
 (function () {
     var button = document.getElementById("downloadButton");
+    var text = document.getElementById("downloadText");
+    var icon = button.querySelector(".download-icon");
 
-    button.addEventListener("click", function (event) {
-        if (button.getAttribute("href") === "YOUR_APK_DOWNLOAD_LINK") {
-            event.preventDefault();
-            alert("Please configure the APK download link first.");
+    var remaining = 10;
+
+    button.classList.add("disabled");
+    button.setAttribute("aria-disabled", "true");
+    button.style.pointerEvents = "none";
+    button.style.opacity = "0.5";
+
+    function updateTimer() {
+        if (remaining > 0) {
+            text.textContent =
+                "Please wait " + remaining + " seconds...";
+            icon.textContent = "⏳";
+            remaining--;
+            setTimeout(updateTimer, 1000);
+        } else {
+            button.classList.remove("disabled");
+            button.setAttribute("aria-disabled", "false");
+            button.style.pointerEvents = "auto";
+            button.style.opacity = "1";
+            button.style.cursor = "pointer";
+
+            text.textContent = "Download Virtual Blurs APK";
+            icon.textContent = "↓";
         }
-    });
+    }
+
+    updateTimer();
 })();
 </script>
+
 </body>
 </html>
