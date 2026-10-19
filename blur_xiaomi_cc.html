@@ -299,6 +299,13 @@ h1 span {
     transition: transform .15s, opacity .15s;
 }
 
+.download-btn.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
 .download-btn:active {
     transform: scale(.98);
     opacity: .85;
